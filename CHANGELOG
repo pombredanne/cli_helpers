@@ -21,7 +21,7 @@ Version 0.2.0
 * Style formatted output with Pygments (optional).
 * Fix issue where tabulate can't handle ANSI escape codes in default values.
 * Run tests on Windows via Appveyor.
-
+* Output as generator for wide and terminaltables output.
 
 Version 0.1.0
 -------------

@@ -26,8 +26,8 @@ def test_tabular_output_formatter():
         | hi   | 1.1     |
         +------+---------+''')
 
-    assert expected == TabularOutputFormatter().format_output(
-        data, headers, format_name='ascii')
+    assert expected == "\n".join(TabularOutputFormatter().format_output(
+        data, headers, format_name='ascii'))
 
 
 def test_tabular_format_output_wrapper():
@@ -44,8 +44,8 @@ def test_tabular_format_output_wrapper():
         | 3  | Joe  |
         +----+------+''')
 
-    assert expected == format_output(data, headers, format_name='ascii',
-                                     missing_value='N/A')
+    assert expected == "\n".join(format_output(data, headers, format_name='ascii',
+                                     missing_value='N/A'))
 
 
 def test_additional_preprocessors():
@@ -68,9 +68,9 @@ def test_additional_preprocessors():
         | hello! | hello, world |
         +--------+--------------+''')
 
-    assert expected == TabularOutputFormatter().format_output(
+    assert expected == "\n".join(TabularOutputFormatter().format_output(
         data, headers, format_name='ascii', preprocessors=(hello_world,),
-        missing_value='hello')
+        missing_value='hello'))
 
 
 def test_format_name_attribute():
